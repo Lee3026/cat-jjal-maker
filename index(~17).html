@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>고양이 짤 만들기</title>
+  </head>
+  <style>
+    body {
+      text-align: center;
+    }
+    .main-card button {
+      position: relative;
+      left: -45px;
+      bottom: 15px;
+    }
+    .favorites {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+  </style>
+  <body>
+    <div id="app"></div>
+
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      const Title = (props) => {
+        console.log("props", props);
+        return <h1>{props.children}</h1>;
+      };
+
+      function CatItem(props) {
+        return (
+          <li>
+            <span>{props.title}</span>
+            <img src={props.img} style={{ width: "150px" }} />
+          </li>
+        );
+      }
+
+      function Favorite() {
+        const CAT1 = "https://cataas.com/cat/HSENVDU4ZMqy7KQ0/says/react";
+        const CAT2 = "https://cataas.com/cat/BxqL2EjFmtxDkAm2/says/inflearn";
+        const CAT3 = "https://cataas.com/cat/18MD6byVC1yKGpXp/says/JavaScript";
+
+        // list 만들기
+        const Cats = [CAT1, CAT2];
+        return (
+          <ul className="favorites">
+            {Cats.map((cat) => (
+              <CatItem img={cat} key={cat} title={title} />
+            ))}
+          </ul>
+        );
+      }
+
+      // ES6+ 디스트럭처링 문법 적용 전
+      // const MainCard = (props) => {
+      //   return (
+      //     <div className="main-card">
+      //       <img src={props.img} />
+      //       <button>🤍</button>
+      //     </div>
+      //   );
+      // };
+
+      // ES6+ 디스트럭처링 문법 적용 후
+      const MainCard = ({ img }) => {
+        function handleHeartClick() {
+          console.log("클릭");
+        }
+        function handleHeartMouseOver() {
+          console.log("마우스오버");
+        }
+        return (
+          <div className="main-card">
+            <img src={img} alt="고양이" width="400" />
+            <button
+              onClick={handleHeartClick}
+              onMouseOver={handleHeartMouseOver}
+            >
+              🤍
+            </button>
+          </div>
+        );
+      };
+
+      // return 제외 가능: jsx
+      // const form = (
+      //   <form>
+      //     <input
+      //       type="text"
+      //       name="name"
+      //       placeholder="영어 대사를 입력해주세요"
+      //     />
+      //     <button type="submit">생성</button>
+      //   </form>
+      // );
+
+      // 함수와 같이 쓰려면 return() 쓸 것!
+      // lifting-state-up : handleSubmit를 props로 전달
+      const Form = ({ handleSubmit }) => {
+        // 구조 분해 할당 전
+        // const counterState = React.useState(1);
+        // const counter = counterState[0];
+        // const setCounter = counterState[1];
+
+        // 구조 분해 할당 후
+        // const [counter, setCounter] = React.useState(1);
+
+        // console.log("카운터", counter);
+
+        // function handleSubmit(event) {
+        //   event.preventDefault();
+
+        //   console.log("counter전송됨");
+        //   setCounter(counter + 1);
+        // }
+        return (
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="name"
+              placeholder="영어 대사를 입력해주세요"
+            />
+            <button type="submit">생성</button>
+          </form>
+        );
+      };
+
+      // lifting-state-up 상태 끌어올리기 : form(자식요소)에 있는 함수를 부모로 올려서 자식들에서 공유 할 수 있도록 하는 것
+      const App = () => {
+        const CAT1 = "https://cataas.com/cat/HSENVDU4ZMqy7KQ0/says/react";
+        const CAT2 = "https://cataas.com/cat/BxqL2EjFmtxDkAm2/says/inflearn";
+        const CAT3 = "https://cataas.com/cat/18MD6byVC1yKGpXp/says/JavaScript";
+
+        const [counter, setCounter] = React.useState(1);
+        const [mainCat, setMainCat] = React.useState(CAT1);
+
+        console.log("카운터", counter);
+
+        function handleSubmit(event) {
+          event.preventDefault();
+
+          console.log("counter전송됨");
+          setCounter(counter + 1);
+          setMainCat(CAT2);
+        }
+
+        // lifting-state-up: form -> props로 넘기기
+        return (
+          <div>
+            <Title>{counter}번째 고양이</Title>
+            <Form handleSubmit={handleSubmit} />
+            <MainCard img={mainCat} />
+            <Favorite />
+          </div>
+        );
+      };
+
+      const catWhere = document.querySelector("#app");
+
+      ReactDOM.render(<App />, catWhere);
+    </script>
+  </body>
+</html>
