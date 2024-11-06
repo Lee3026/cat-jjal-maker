@@ -144,13 +144,21 @@
         const CAT2 = "https://cataas.com/cat/BxqL2EjFmtxDkAm2/says/inflearn";
         const CAT3 = "https://cataas.com/cat/18MD6byVC1yKGpXp/says/JavaScript";
 
-        const [counter, setCounter] = React.useState(
-          jsonLocalStorage.getItem("counter")
-        );
+        // 리팩토링: 함수, 지연초기화
+        // const [counter, setCounter] = React.useState(
+        //   jsonLocalStorage.getItem("counter")
+        // );
+        const [counter, setCounter] = React.useState(() => {
+          return jsonLocalStorage.getItem("counter");
+        });
+        // const [favorites, setFavorites] = React.useState(
+        //   jsonLocalStorage.getItem(favorites) || []
+        // );
+        const [favorites, setFavorites] = React.useState(() => {
+          return jsonLocalStorage.getItem(favorites) || [];
+        });
+
         const [mainCat, setMainCat] = React.useState(CAT1);
-        const [favorites, setFavorites] = React.useState(
-          jsonLocalStorage.getItem(favorites) || []
-        );
 
         // 하트를 누른 이미지 변수 설정
         const alreadyFavorites = favorites.includes(mainCat);
@@ -186,11 +194,15 @@
         // form value 바인딩
         async function updateMainCat(value) {
           const newCat = await fetchCat(value);
-
           setMainCat(newCat);
-          const nextCounter = counter + 1;
-          setCounter(nextCounter);
-          jsonLocalStorage.setItem("counter", nextCounter);
+
+          // 리팩토링: 인풋을 여러번 연속 클릭했을때 반영되지 않는 오류 수정 -> nextCounter가 바라보는 counter가 꼬이는 현상
+          // 리팩토링: prev -> previous 기존 counter값을 가리킴
+          setCounter((prev) => {
+            const nextCounter = prev + 1;
+            jsonLocalStorage.setItem("counter", nextCounter);
+            return nextCounter;
+          });
         }
 
         function handleHeartClick() {
