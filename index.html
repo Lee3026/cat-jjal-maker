@@ -75,11 +75,15 @@
       }
 
       function Favorite({ favorites, title }) {
+        if (favorites.length == 0) {
+          return <div>사진 위의 하트를 눌러 고양이 사진을 저장해보세요!</div>;
+        }
+
         console.log("favorites", favorites, title);
         return (
           <ul className="favorites">
             {favorites.map((cat, index) => (
-              <CatItem img={cat} key={cat} title={title} index={index} />
+              <CatItem img={cat} key={cat.index} title={title} index={index} />
             ))}
           </ul>
         );
@@ -125,11 +129,12 @@
         );
       };
 
-      const MainCard = ({ img, onHeartClick }) => {
+      const MainCard = ({ img, onHeartClick, alreadyFavorites }) => {
+        const heartIcon = alreadyFavorites ? "💖" : "🤍";
         return (
           <div className="main-card">
             <img src={img} alt="고양이" width="400" />
-            <button onClick={onHeartClick}>🤍</button>
+            <button onClick={onHeartClick}>{heartIcon}</button>
           </div>
         );
       };
@@ -146,6 +151,9 @@
         const [favorites, setFavorites] = React.useState(
           jsonLocalStorage.getItem(favorites) || []
         );
+
+        // 하트를 누른 이미지 변수 설정
+        const alreadyFavorites = favorites.includes(mainCat);
 
         // async, await, api 추가
         const fetchCat = async (text) => {
@@ -191,11 +199,18 @@
           jsonLocalStorage.setItem("favorites", nextFavorite);
         }
 
+        // conter가 null일때 변수 설정
+        const nullCounterTitle = counter === null ? "" : counter + "번째";
+
         return (
           <div>
-            <Title>{counter}번째 고양이</Title>
+            <Title>{nullCounterTitle} 고양이 가라사대</Title>
             <Form updateMainCat={updateMainCat} />
-            <MainCard img={mainCat} onHeartClick={handleHeartClick} />
+            <MainCard
+              img={mainCat}
+              onHeartClick={handleHeartClick}
+              alreadyFavorites={alreadyFavorites}
+            />
             <Favorite favorites={favorites} title={"즐겨찾기"} />
           </div>
         );
