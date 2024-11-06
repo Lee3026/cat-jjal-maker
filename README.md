@@ -1,8 +1,12 @@
 # 고양이 짤방 생성기
 
-> 고양이 짤방을 생성하는 리액트 앱입니다
+> 입력한 텍스트와 고양이 이미지를 결합한 짤방을 생성하는 리액트 앱입니다
 
-![328234-0-resize](https://user-images.githubusercontent.com/3839771/149098995-0b89419a-58fb-494a-ade3-27aae5342553.gif)
+# 배포 url
+
+```
+https://lee3026.github.io/cat-jjal-maker/
+```
 
 # JSX
 
