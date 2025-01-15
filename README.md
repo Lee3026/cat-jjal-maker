@@ -42,8 +42,6 @@ return <button onClick={카운터증가}>카운터는 {counter}</button>
 
 ---
 
-<br>
-
 #### 스터디 자료
 
 1. Fetch_API <https://developer.mozilla.org/ko/docs/Web/API/Fetch_API/Using_Fetch>
