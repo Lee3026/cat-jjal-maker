@@ -36,33 +36,14 @@ function 카운터증가(){
 return <button onClick={카운터증가}>카운터는 {counter}</button>
 ```
 
-## Fetch_API
 
-- 참고자료
+### 참고자료
 
+1. Fetch_API <https://developer.mozilla.org/ko/docs/Web/API/Fetch_API/Using_Fetch>
 
-<https://developer.mozilla.org/ko/docs/Web/API/Fetch_API/Using_Fetch>
+2. public API github <https://github.com/public-apis/public-apis>
 
-## public API github
+3.  자바스크립트 비동기 처리와 콜백 함수 <https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-operation/>
 
-- 참고자료
-
-
-<https://github.com/public-apis/public-apis>
-
-
-## 자바스크립트 비동기 처리와 콜백 함수
-
-- 참고자료
-
-
-<https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-operation/>
-
-
-## 자바스크립트 Promise
-
-- 참고자료
-
-
-<https://joshua1988.github.io/web-development/javascript/promise-for-beginners/>
+4. 자바스크립트 Promise <https://joshua1988.github.io/web-development/javascript/promise-for-beginners/>
 
