@@ -5,7 +5,9 @@
 
 ## 배포 url
 
-[짤방 미리보기](https://lee3026.github.io/cat-jjal-maker/)<https://lee3026.github.io/cat-jjal-maker/>
+[짤방 미리보기](https://lee3026.github.io/cat-jjal-maker/)
+
+<https://lee3026.github.io/cat-jjal-maker/>
 
 ## JSX
 
@@ -21,8 +23,8 @@
 
 컴포넌트 안에서 자유롭게 변경할 값이 필요할 때
 
-1. const[상태명, 상태변경함수명] = React.useState(초기값)
-2. 컴포넌트 안에서 만들 수 있다.
+- const[상태명, 상태변경함수명] = React.useState(초기값)
+- 컴포넌트 안에서 만들 수 있다.
 
 ```
 const [counter, setCounter] = React.useState(1)
@@ -37,22 +39,30 @@ return <button onClick={카운터증가}>카운터는 {counter}</button>
 ## Fetch_API
 
 - 참고자료
+
+
 <https://developer.mozilla.org/ko/docs/Web/API/Fetch_API/Using_Fetch>
 
 ## public API github
 
 - 참고자료
+
+
 <https://github.com/public-apis/public-apis>
 
 
 ## 자바스크립트 비동기 처리와 콜백 함수
 
 - 참고자료
+
+
 <https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-operation/>
 
 
 ## 자바스크립트 Promise
 
 - 참고자료
+
+
 <https://joshua1988.github.io/web-development/javascript/promise-for-beginners/>
 
