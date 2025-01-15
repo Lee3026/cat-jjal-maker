@@ -35,10 +35,13 @@ function 카운터증가(){
 
 return <button onClick={카운터증가}>카운터는 {counter}</button>
 ```
+
 <br>
 <br>
 <br>
+
 ---
+
 <br>
 
 #### 스터디 자료
