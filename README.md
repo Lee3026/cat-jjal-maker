@@ -6,8 +6,6 @@
 
 ## 배포 url
 
-[짤방 미리보기](https://lee3026.github.io/cat-jjal-maker/) 
-
 https://lee3026.github.io/cat-jjal-maker/
 
 ## JSX
@@ -37,6 +35,9 @@ function 카운터증가(){
 
 return <button onClick={카운터증가}>카운터는 {counter}</button>
 ```
+
+
+
 
 ---
 
