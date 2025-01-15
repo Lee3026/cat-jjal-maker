@@ -1,23 +1,23 @@
-# 고양이 짤방 생성기
+## 고양이 짤방 생성기
 
-입력한 텍스트와 고양이 이미지를 결합한 짤방을 생성하는 리액트 앱입니다
-<https://milooy.github.io/cat-jjal-maker/>
+- 입력한 텍스트와 고양이 이미지를 결합한 짤방을 생성하는 리액트 앱입니다.
+- 수업자료: <https://milooy.github.io/cat-jjal-maker/>
 
-# 배포 url
+## 배포 url
 
-[짤방 미리보기](https://lee3026.github.io/cat-jjal-maker/)
+[짤방 미리보기](https://lee3026.github.io/cat-jjal-maker/)<https://lee3026.github.io/cat-jjal-maker/>
 
-# JSX
+## JSX
 
-Javascript + XML
+- Javascript + XML
 
-> Javascript에 HTML태그를 얹은 리액트에서 사용하는는 문법
+- Javascript에 HTML태그를 얹은 리액트에서 사용하는는 문법
 
-# Babel
+## Babel
 
-> JSX => Javascript로 통역
+- JSX => Javascript로 통역
 
-# 상태(useState)
+## 상태(useState)
 
 컴포넌트 안에서 자유롭게 변경할 값이 필요할 때
 
@@ -34,26 +34,25 @@ function 카운터증가(){
 return <button onClick={카운터증가}>카운터는 {counter}</button>
 ```
 
-# Fetch_API
+## Fetch_API
 
-```
-https://developer.mozilla.org/ko/docs/Web/API/Fetch_API/Using_Fetch
-```
+- 참고자료
+<https://developer.mozilla.org/ko/docs/Web/API/Fetch_API/Using_Fetch>
 
-# public API github
+## public API github
 
-```
-https://github.com/public-apis/public-apis
-```
+- 참고자료
+<https://github.com/public-apis/public-apis>
 
-# 자바스크립트 비동기 처리와 콜백 함수
 
-```
-https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-operation/
-```
+## 자바스크립트 비동기 처리와 콜백 함수
 
-# 자바스크립트 Promise
+- 참고자료
+<https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-operation/>
 
-```
-https://joshua1988.github.io/web-development/javascript/promise-for-beginners/
-```
+
+## 자바스크립트 Promise
+
+- 참고자료
+<https://joshua1988.github.io/web-development/javascript/promise-for-beginners/>
+
