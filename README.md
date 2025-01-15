@@ -12,7 +12,7 @@ https://lee3026.github.io/cat-jjal-maker/
 
 - Javascript + XML
 
-- Javascript에 HTML태그를 얹은 리액트에서 사용하는는 문법
+- Javascript에 HTML태그를 얹은 리액트에서 사용하는 문법
 
 ## Babel
 
@@ -35,12 +35,12 @@ function 카운터증가(){
 
 return <button onClick={카운터증가}>카운터는 {counter}</button>
 ```
-
-
-
-
+<br>
+<br>
+<br>
 ---
-
+<br>
+<br>
 #### 스터디 자료
 
 1. Fetch_API <https://developer.mozilla.org/ko/docs/Web/API/Fetch_API/Using_Fetch>
