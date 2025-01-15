@@ -5,9 +5,7 @@
 
 ## 배포 url
 
-[짤방 미리보기](https://lee3026.github.io/cat-jjal-maker/)
-
-<https://lee3026.github.io/cat-jjal-maker/>
+[짤방 미리보기](https://lee3026.github.io/cat-jjal-maker/) https://lee3026.github.io/cat-jjal-maker/
 
 ## JSX
 
@@ -24,6 +22,7 @@
 컴포넌트 안에서 자유롭게 변경할 값이 필요할 때
 
 - const[상태명, 상태변경함수명] = React.useState(초기값)
+
 - 컴포넌트 안에서 만들 수 있다.
 
 ```
@@ -36,8 +35,9 @@ function 카운터증가(){
 return <button onClick={카운터증가}>카운터는 {counter}</button>
 ```
 
+---
 
-### 참고자료
+### 스터디 자료
 
 1. Fetch_API <https://developer.mozilla.org/ko/docs/Web/API/Fetch_API/Using_Fetch>
 
