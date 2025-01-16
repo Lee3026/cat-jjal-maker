@@ -36,6 +36,40 @@ function 카운터증가(){
 return <button onClick={카운터증가}>카운터는 {counter}</button>
 ```
 
+## 리스트(map)
+
+- 배열에서 map을 돌면서 리액트 UI를 반환한다.
+
+```
+const favorite = ["이미지1", "이미지2", "이미지3"]
+
+<ul>
+{favorite.map(image=> <img src={image}></img>)}
+</ul>
+```
+
+## 폼(value)
+
+- 사용자의 입력값을 직접 다루기 위해 value로 상태를 관리한다.
+
+```
+const[value, setValue] = React.useState('초기값이에요')
+function onValueChange(e){
+    setValue(e.target.value);
+}
+<form onSubmit={handleSubmit}>
+    <input value={value} onChange={onValueChange} />
+    <button type='submit'>제출</button>
+</form>
+```
+
+## localstorage
+- 브라우저에 데이터 저장하기
+
+```
+localStorage.setItem('이름', '삼색이')
+localStorage.getItem('이름') //삼색이
+```
 <br>
 <br>
 <br>
